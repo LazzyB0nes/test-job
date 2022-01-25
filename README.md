@@ -3,3 +3,8 @@
 
 Есть сомнения в статических методах, ориентировался на стандартную математический класс, в котором метода для расчёта не требуют инициализации объекта. 
 Собирается .net 6. 
+
+# Задание 2
+SELECT product_name, name 
+FROM products 
+left join category ON (products.category_id = category.id)
