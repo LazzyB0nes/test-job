@@ -1,19 +1,19 @@
 namespace GeometryCalculator;
 
-public class Calculator
+public static class Calculator
 {
     private const int ONE_SIDE = 1;
     private const int THREE_SIDES = 3;
-    private Dictionary<int, Type> figures = new() {
+    static private Dictionary<int, Type> figures = new() {
         { ONE_SIDE, typeof(Circle)},
         { THREE_SIDES, typeof(Triangle)},
     };
     private static Circle? circle;
     private static Triangle? triangle;
-    public double Square(params double[] segments)
+    static public double Square(params double[] segments)
     {
         Type figureType = figures[segments.Length];
-        var parameters = segments.Select(seg => (object)seg).ToArray();
+        var parameters = segments.Select(seg => (object)seg).ToArray(); 
         object? figure = Activator.CreateInstance(figureType, parameters);
         
         if (figure is not null)
