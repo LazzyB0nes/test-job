@@ -10,6 +10,11 @@ public static class Calculator
     };
     private static Circle? circle;
     private static Triangle? triangle;
+
+    /// <summary>
+    /// Расчёт площади фигуры по кол-ву переданных параметров
+    /// Example: Square(2) - Расчёт площади круга по радиусу, Square(3, 4, 5) - Расчёт площади треугольника по трём сторонам
+    /// </summary>
     static public double Square(params double[] segments)
     {
         Type figureType = figures[segments.Length];
@@ -23,11 +28,19 @@ public static class Calculator
 
         throw new NotImplementedException("Не определён тип фигуры");
     }
+    
+    /// <summary>
+    /// Статический метод расчёта площади круга
+    /// </summary>
     public static double CircleSquare(double radius) 
     {
         circle = new(radius);
         return circle.Square();
     }
+
+    /// <summary>
+    /// Статический метод расчёта площади треугольника
+    /// </summary>
     public static double TriangleSquare(double hypotenuse, double opposite, double adjacent) 
     {
         triangle = new(hypotenuse, opposite, adjacent);

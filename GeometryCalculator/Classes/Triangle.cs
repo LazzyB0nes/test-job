@@ -5,6 +5,10 @@ public class Triangle : ISquarable
     private double SideA;
     private double SideB;
     private double SideC;
+    
+    /// <summary>
+    /// Флаг, является ли треугольник прямоугольным
+    /// </summary>
     public bool IsRightAngled => CheckIsRightAngled();
 
     public Triangle(double sideA, double sideB, double sideC)
@@ -16,7 +20,9 @@ public class Triangle : ISquarable
         SideB = sideB;
         SideC = sideC;
     }
-
+    /// <summary>
+    /// Метод расчёта площади треугольника
+    /// </summary>
     public double Square() 
     {
         double semiPerimeter = (SideA + SideB + SideC) / 2;

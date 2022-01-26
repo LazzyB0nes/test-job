@@ -10,5 +10,8 @@ public class Circle : ISquarable
 
         Radius = radius;
     }
+    /// <summary>
+    /// Метод расчёта площади круга
+    /// </summary>
     public double Square() => Math.PI * Radius * Radius;
 }
